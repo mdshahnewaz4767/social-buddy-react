@@ -1,12 +1,19 @@
 import React from 'react';
+import { useHistory } from 'react-router';
 
 const Post = (props) => {
     const {id, title, body} = props.post;
-    console.log(title);
+    const history = useHistory();
+    const showComment = (id) => {
+        const url = `post/${id}`;
+        history.push(url);
+        console.log(url);
+    }
     return (
         <div>
             <h3><strong>Id: {id}</strong> {title}</h3>
             <p>{body}</p>
+            <button onClick={() => showComment(id)}>Show Components</button>
         </div>
     );
 };
