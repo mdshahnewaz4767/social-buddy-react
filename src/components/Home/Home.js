@@ -13,7 +13,7 @@ const Home = () => {
         <div>
             <h1>Posts Length: {posts.length}</h1>
             {
-                posts.map(post => <Post  post={post} key={post.userId}></Post> )
+                posts.map(post => <Post  post={post} key={post.id}></Post> )
             }
         </div>
     );
